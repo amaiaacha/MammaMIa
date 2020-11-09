@@ -1,0 +1,16 @@
+<html>
+<h2> {{masa.nameMa}}</h2>
+<p> Esta masa tiene las siguientes pizzas:</p>
+
+{% for pizza in pizzas%}
+    <div>
+        <p> {{pizza.namePi}} </p>
+        <img src="/{{pizza.image}}"/>
+    </div>
+{% endfor %}
+
+
+
+
+
+</html>

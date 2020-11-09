@@ -1,0 +1,65 @@
+
+
+<html>
+     
+    <head> 
+       <title> Mamma Mia Home </title>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" type="text/css" href="diseno.css"/>
+    </head>
+
+    <header>
+        <h1>TITULO</h1>
+    </header>
+    <nav>
+        <a href="">Elegir pizzas por masas</a>
+        <a href="">Elegir pizzas por tipo de ingredientes</a>
+        <a href=""> Elegir pizzas por nombre</a>
+
+    </nav>
+
+    <body>
+        <section class="contenedorMasa">
+        <h1>Elige una pizza segun su masa</h1>
+            {% for masa in masas%}
+                <div class="masasInicio">
+                    {% if masa.getMasa %}
+                    <a href="{{masa.getMasa}}"> <h1> {{masa.nameMa}}</h1>
+                        {% if masa.image %}
+                         <img src= "/{{masa.image}}" height="200" width="200"/>
+                        {% endif %}
+                    </a>
+                    {% else %}
+                    <!-- saltar error-->
+                    {% endif %}
+                    
+                </div>
+            
+            {%endfor%}
+            
+            
+        </section>
+       
+
+        <article class="contenedorIngred">
+            <h2>Tipo 1</h2>
+            <h2>Tipo 2</h2>
+            <h2>Tipo 3</h2>
+            <!-- Aqui ira otro tipo de contenido-->
+        </article>
+
+        <aside class="contenedorDescrip">
+            <h2>Mamma Mia</h2>
+          <h3>De donde venimos...</h3>
+         <p>Este negocio surgio en 1980 cuando Jorge Lekken abrio el primer restaurante oficial de Mamma Mia.
+            Pese a las complicaciones que tuvo a finales de los 90 consiguó ampliar su negocio y llegar hasta America,
+            donde sus pizzas se volvieron mundialmente famosas.
+         </p>
+            <!-- Aqui ira lo que ira en el bloque de la derecha-->
+        </aside>
+    </body>
+
+    <footer>
+        <!-- En footer ire el pie de la pagina donde se podra acceder a las redes sociales externas-->
+    </footer>
+</html>
