@@ -6,7 +6,7 @@
        <title> Mamma Mia Home </title>
        <meta charset="UTF-8">
         {% load static %}
-       <link rel="stylesheet" type="text/css" href="diseno.css"/>
+       <link rel="stylesheet" type="text/css" href="{% static 'diseno.css' %}"/>
     </head>
 
     <header>
@@ -28,7 +28,7 @@
                     {% if masa.getMasa %}
                     <a href="{{masa.getMasa}}"> <h1> {{masa.nameMa}}</h1>
                         {% if masa.image %}
-                         <img src= "/{{masa.image}}" height="200" width="200"/>
+                         <img src= "{%static 'media/imgMasa/{{masa.image}}' %}" height="200" width="200"/>
                         {% else %}
                         <!-- salta error-->
                         {% endif %}
