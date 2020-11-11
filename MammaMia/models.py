@@ -12,7 +12,7 @@ class Masa(models.Model):
         return reverse('masaPage', args=[self.pk])
 
 class Ingrediente(models.Model):
-    nameIn =models.CharField(max_length = 500)
+    nameIn = models.CharField(max_length = 500)
 
 class Pizza(models.Model):
     namePi = models.CharField(max_length = 255)
