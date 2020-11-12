@@ -2,7 +2,7 @@
         .contenedorMasa{
             position: absolute;
             left: 30px;
-            top: 70px;
+            top: 100px;
             height: 200px;
             width: 700px;
         }
@@ -10,7 +10,7 @@
             position: absolute;
             top: 250px;
             left: 300px;
-            height: 200px;
+            height: 2000px;
             width: 700px;
         }
         .contenedorDescrip{
@@ -22,6 +22,7 @@
         }
 
         .masasInicio{
+           
 
         }
     
