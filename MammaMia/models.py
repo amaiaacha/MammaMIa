@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Masa(models.Model):
     nameMa = models.CharField(max_length = 255)
-    image = models.ImageField(upload_to ='media/imgMasa')
+    image = models.ImageField(upload_to ='media')
     
     def getMasa(self):
         return reverse('masaPage', args=[self.pk])
@@ -16,6 +16,6 @@ class Ingrediente(models.Model):
 
 class Pizza(models.Model):
     namePi = models.CharField(max_length = 255)
-    image = models.ImageField(upload_to = 'media/imgPizza')
+    image = models.ImageField(upload_to = 'media')
     masa = models.ForeignKey(Masa, on_delete = models.CASCADE)
     ingrediente = models.ForeignKey(Ingrediente, on_delete = models.CASCADE)
