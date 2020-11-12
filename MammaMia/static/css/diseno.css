@@ -1,15 +1,23 @@
 
         .contenedorMasa{
-            float: left;
-            padding-left: 40px;
+            position: absolute;
+            left: 30px;
+            top: 70px;
+            height: 200px;
+            width: 700px;
         }
         .contenedorIngred{
-            float: left;
-            padding-left: 300px;
-            padding-right: 120px;
+            position: absolute;
+            top: 250px;
+            left: 30px;
+            height: 200px;
+            width: 700px;
         }
         .contenedorDescrip{
-            float: inline-end;
-
+            position: absolute;
+            top: 272px;
+            left: 1013px;
+            height: 600px;
+            width: 310px;
         }
     
