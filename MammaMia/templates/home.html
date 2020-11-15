@@ -1,34 +1,27 @@
 
-<!DOCTYPE html>
-<html lang="en">
-     
-    <head> 
-       <title> Mamma Mia Home </title>
-       <meta charset="UTF-8">
-        {% load static %}
-       <link rel="stylesheet" type="text/css" href="{% static 'css/diseno.css' %}"/>
-    </head>
+{% extends 'base.html' %}
 
-    <header>
-        <h1>TITULO</h1>
-    </header>
-    <nav>
-        <a href="">Elegir pizzas por masas</a>
-        <a href="">Elegir pizzas por tipo de ingredientes</a>
-        <a href=""> Elegir pizzas por nombre</a>
+{% block title %}
+    MammaMia Home
+{% endblock %}
 
-    </nav>
+{% block content %}
 
-    <body>
-        <div class="contenedorMasa">
+    <div class="contenedorMasa">
          <h1>Elige una pizza segun su masa</h1>
-            {% for masa in masas%}
+         <br>
+        <div class="card-deck">
+            {% for masa in masas %}
                 <!--comprobar si hay masas-->
-                <div class="masasInicio">
+                <div class="card" style="width: 18rem;">
                     {% if masa.getMasa %}
-                    <a href="{{masa.getMasa}}"> <h1> {{masa.nameMa}}</h1>
+                    <a href="{{masa.getMasa}}"> 
                         {% if masa.image %}
-                         <img src= "{{masa.image}}" height="200" width="200"/>
+                         <img class="card-img-top" src= "{{masa.image}}" height="200" width="200"/>
+                         <div class="card-body">
+                            <h5 class="card-title"> {{masa.nameMa}}</h5>
+                            <p class="card-text"> {{masa.descripcion}}</p>
+                        </div>
                         {% else %}
                         <!-- salta error-->
                         {% endif %}
@@ -37,14 +30,13 @@
                     <!-- saltar error-->
                     {% endif %}
                 </div>
-            {%endfor%}
-            
-            
+            {%endfor%}     
         </div>
+    </div>
        
 
         <div class="contenedorIngred">
-            <h2>Ingrediente 1</h2>
+            <div class="shadow p-3 mb-5 bg-white rounded"><h2>Ingrediente 1</h2></div>
             <h2>Ingrediente 2</h2>
             <h2>Ingrediente 3</h2>
             <!-- Aqui ira otro tipo de contenido-->
@@ -59,7 +51,6 @@
          </p>
             <!-- Aqui ira lo que ira en el bloque de la derecha-->
         </div>
-    </body>
 
-   
-</html>
+
+{% endblock%}

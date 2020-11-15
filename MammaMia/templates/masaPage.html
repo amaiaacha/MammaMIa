@@ -1,15 +1,18 @@
+{% extends 'base.html' %}
 
-<html lang="en">
-<h2> {{masa.nameMa}}</h2>
-<p> Esta masa tiene las siguientes pizzas:</p>
+    {% block title %} {{masa.nameMa}} {% endblock %}
 
-{% for pizza in pizzas%}
-    <div>
-        <p> {{pizza.namePi}} </p>
-        <img src="/MammaMia/media/{{masa.image}}}"/>
-    </div>
-{% endfor %}
-</html>
+{% block content %}
+    <h2> {{masa.nameMa}}</h2>
+    <p> Esta masa tiene las siguientes pizzas:</p>
+
+    {% for pizza in pizzas%}
+        <div>
+         <p> {{pizza.namePi}} </p>
+         <img src="/MammaMia/media/{{masa.image}}}"/>
+        </div>
+    {% endfor %}
+{% endblock %}
 
 
 
