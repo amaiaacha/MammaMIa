@@ -10,7 +10,7 @@ def homepage(request):
 
 def masaPage(request, pk):
     masas = get_object_or_404(Masa, pk = pk)
-    pizzas = Pizza.objects.filter(masa=masas) 
+    pizzas = Pizza.objects.filter(masa=masas) #?
     context = {'masas':masas, 'pizzas':pizzas}
 
     return render(request, 'masaPage.html', context)
