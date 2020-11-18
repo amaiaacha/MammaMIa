@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{%block title%}{%endblock%}</title>
+
+        <!--Meta-->
+        <meta charset="UTF-8">  
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/diseno.css' %}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/\bootstrap.min.css"integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81i\uXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="main-content" class="rest">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="barra">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a class="navbar-brand" href="/">MAMMA MIA</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"> Pag1 <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Pag2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Pag3</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+              <div id="contenidoHome">
+                  {% block content %}
+                  {% endblock %}
+              </div>
+        </div>
+
+    </body>
+
+</html>

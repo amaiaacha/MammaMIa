@@ -1,15 +1,20 @@
+{% block title %} {{masa.nameMa}} {% endblock %}
 
-<html lang="en">
-<h2> {{masa.nameMa}}</h2>
-<p> Esta masa tiene las siguientes pizzas:</p>
+{% block content %}
+    <h2></h2>
+    <p> Esta masa tiene las siguientes pizzas:</p>
 
-{% for pizza in pizzas%}
-    <div>
-        <p> {{pizza.namePi}} </p>
-        <img src="/MammaMia/media/{{masa.image}}}"/>
-    </div>
-{% endfor %}
-</html>
+    {% for pizza in pizzas%}
+        <div>
+         <p> {{pizza.namePi}} </p>
+         <img src="/MammaMia/media/{{masa.image}}}"/>
+            {% for ingrediente in ingredientes %}
+               <p> {{ingrediente.nameIn}}</p>
+            {% endfor %}
+        </div>
 
-
+        <div>
+        </div>
+    {% endfor %}
+{% endblock %}
 
