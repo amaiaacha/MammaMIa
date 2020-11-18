@@ -1,23 +1,24 @@
-.contenedorMasa{
-    position: absolute;
-    height: 2500px;
-    width: 1000px;
-    left: 30px;
-    top: 90px;
-}
-.contenedorIngred{
-    position: absolute;
-    height: 2000px;
-    width: 350px;
-    top: 600px;
-    left: 30px;
-}
-.contenedorDescrip{
-    position: absolute;
-    height: 600px;
-    width: 330px;
-    top: 90px;
-    left: 1100px;
-}
-       
-        
+
+        .contenedorMasa{
+            position: absolute;
+            left: 30px;
+            top: 70px;
+            height: 200px;
+            width: 700px;
+        }
+        .contenedorIngred{
+            position: absolute;
+            top: 250px;
+            left: 300px;
+            height: 200px;
+            width: 700px;
+        }
+        .contenedorDescrip{
+            position: absolute;
+            top: 272px;
+            left: 1013px;
+            height: 600px;
+            width: 310px;
+        }
+
+    

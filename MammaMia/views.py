@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Masa, Pizza, Ingrediente
+from .models import Masa, Pizza
 
 
 # Create your views here.
