@@ -13,12 +13,14 @@ class Masa(models.Model):
 
 class Ingrediente(models.Model):
     nameIn = models.CharField(max_length = 500)
+    calorias = models.CharField(max_length = 4)
 
 class Pizza(models.Model):
     namePi = models.CharField(max_length = 255)
     image = models.ImageField(upload_to = 'media')
-    masa = models.ForeignKey(Masa, on_delete = models.CASCADE, default = 27)
+    masa = models.ForeignKey(Masa, on_delete = models.CASCADE, default = 1)
     ingredientes = models.ManyToManyField(Ingrediente)
+
 
 
 

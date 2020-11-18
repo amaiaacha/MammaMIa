@@ -1,3 +1,4 @@
+/* PARTE HOME.HTML */
 .contenedorMasa{
     position: absolute;
     height: 2500px;
@@ -16,6 +17,21 @@
     position: absolute;
     height: 600px;
     width: 330px;
-    top: 90px;
+    top: 70px;
     left: 1100px;
+}
+
+/* PARTE MASAPAGE.HTML */
+.pizzasPorMasa{
+    position: absolute;
+    height: 980px;
+    width: 500px;
+    top: 90px;
+    left: 30px;
+}
+
+.list-group{
+    position: absolute;
+    height: 300px;
+    width: 300px;
 }
