@@ -1,9 +1,9 @@
 .contenedorMasa{
     position: absolute;
     height: 2500px;
-    width: 1650px;
+    width: 1000px;
     left: 30px;
-    top: 120px;
+    top: 90px;
 }
 .contenedorIngred{
     position: absolute;
@@ -15,11 +15,9 @@
 .contenedorDescrip{
     position: absolute;
     height: 600px;
-    width: 400px;
-    top: 200px;
-    left: 1770px;
+    width: 330px;
+    top: 90px;
+    left: 1100px;
 }
-
-
        
         

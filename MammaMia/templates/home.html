@@ -8,7 +8,7 @@
 {% block content %}
 
     <div class="contenedorMasa">
-         <h1>Elige una pizza segun su masa</h1>
+         <h3>Elige una pizza segun su masa</h3>
          <br>
         <div class="card-deck">
             {% for masa in masas %}
@@ -17,7 +17,7 @@
                     {% if masa.getMasa %}
                     <a href="{{masa.getMasa}}"> 
                         {% if masa.image %}
-                         <img class="card-img-top" src= "{{masa.image}}" height="200" width="200"/>
+                         <img class="card-img-top" src= "MammaMia/{{masa.image}}" height="200" width="200"/>
                          <div class="card-body">
                             <h5 class="card-title"> {{masa.nameMa}}</h5>
                             <p class="card-text"> {{masa.descripcion}}</p>
@@ -47,9 +47,13 @@
           <h3>De donde venimos...</h3>
          <p>Este negocio surgio en 1980 cuando Jorge Lekken abrio el primer restaurante oficial de Mamma Mia.
             Pese a las complicaciones que tuvo a finales de los 90 consiguó ampliar su negocio y llegar hasta America,
-            donde sus pizzas se volvieron mundialmente famosas.
+            donde sus pizzas se volvieron mundialmente famosas. Todo comenzó cuando Jorge terminó sus estudios de Ingeniería
+            Industrial y comenzó a buscar trabajo. En 1970 la situación económica en Australia dejó a muchos jóvenes que acababan
+            de terminar la carrera sin trabajo. Jorge se puseo a trabajar en una pizzeria llamada Mamma, empezó como camarero pero acabó
+            trabajando como cocinero debido a su interés y dedicación al trabajo. Fue subiendo de puesto, pero en 1979 la cadena de pizzerias
+            Mamma calló. Meses después, Jorge planteó la posibilidad de crear una pizzeria con el dinero que había ido ahorrando mientras
+            trabajaba y así fue como nació en 1980 Mamma Mia haciendo honor a su antiguo trabajo.
          </p>
-            <!-- Aqui ira lo que ira en el bloque de la derecha-->
         </div>
 
 
