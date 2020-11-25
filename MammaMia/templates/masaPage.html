@@ -5,6 +5,9 @@
 
 {% block content %}
     <div class="pizzasPorMasa">     
+        <h2>{{masa.nameMa}}</h2>
+        <img src="{{masa.image}}">
+        <p>{{masa.descrip}}</p>
         <h3> Esta masa tiene las siguientes pizzas:</h3>
             {% for pizza in pizzas%}
             <div>
