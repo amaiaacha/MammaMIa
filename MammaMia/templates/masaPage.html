@@ -6,17 +6,19 @@
 {% block content %}
     <div class="pizzasPorMasa">     
         <h2>{{masas.nameMa}}</h2>
-        <img src="{{masas.image}}">
+        <img src="/media/{{masas.image}}">
         <p>{{masas.descrip}}</p>
         <h3> Esta masa tiene las siguientes pizzas:</h3>
-            {% for pizza in pizzas%}
+            {% for pizza in pizzas %}
             <div>
                 <p> {{pizza.namePi}} </p>
 
                 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-interval="10000">
-                        <img src="{{masas.image}}}" class="d-block w-100">
+                        {% if pizza.image %}
+                        <img src="/media/{{pizza.image}}}" class="d-block w-100">
+                        {% endif %}
                       </div>
                       <div class="carousel-item" data-interval="2000">
                         <img src="..." class="d-block w-100" alt="...">

@@ -6,4 +6,5 @@ urlpatterns = [
     path('masaPage/<int:pk>', views.masaPage, name = 'masaPage'),
     path('ingredPage/<int:pk>', views.ingredPage, name = 'ingredPage'),
     path('crearPizza/', views.crearPizza, name = 'crearPizza'),
+    path('who/', views.who, name = 'who'),
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Masa, Pizza, Ingrediente, nuevaPizza
+from .models import Masa, Pizza, Ingrediente, nuevaPizza, Direccion
 from .forms import crearPizzaForm
 
 
@@ -41,6 +41,14 @@ def crearPizza(request):
     context = {'ingredientes':ingredientes, 'masas':masas, 'form' : form}
     
     return render(request, 'crearPizza.html', context)
+
+
+def who(request):
+    direccion = Direccion.objects.all()
+    numeroTelf = Direccion.objects.all()
+    context = {'direccion':direccion, 'numeroTelf': numeroTelf}
+    
+    return render(request, 'who.html', context)
 
 
 

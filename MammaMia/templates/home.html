@@ -16,8 +16,10 @@
                 <!--comprobar si hay masas-->
                 <div class="card" style="width: 18rem;">
                     <a href="{{masa.getMasa}}">  
-                         <img class="card-img-top" src= "MammaMia/{{masa.image}}" height="200" width="200"/>
-                         <div class="card-body">
+                        {% if masa.image %}
+                         <img class="card-img-top" src= "/media/{{masa.image}}" height="200" width="200"/>
+                        {% endif %} 
+                        <div class="card-body">
                             <h5 class="card-title"> {{masa.nameMa}}</h5>
                     </a>
                     </div>
