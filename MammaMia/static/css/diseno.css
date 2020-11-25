@@ -8,10 +8,10 @@
 }
 .contenedorIngred{
     position: absolute;
-    height: 2000px;
-    width: 350px;
-    top: 600px;
-    left: 30px;
+    height: 6000px;
+    width: 1000px;
+    top: 400px;
+    left: 20px;
 }
 .contenedorDescrip{
     position: absolute;
@@ -41,11 +41,15 @@
 .form-check{
     position: absolute;
     left: 30px;
-    top: 100px;
 }
 
-.form-row{
+.form-group{
+    position: absolute;
+    left: 15px;
+    height: 100px;
+}
+
+.boton{
     position: absolute;
     left: 30px;
-    height: 50px;
 }

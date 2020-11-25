@@ -18,9 +18,14 @@ class Masa(models.Model):
 class Ingrediente(models.Model):
     nameIn = models.CharField(max_length = 500)
     calorias = models.CharField(max_length = 4)
+    descrip = models.CharField(max_length = 355)
 
     def __str__(self):
         return self.nameIn
+
+    def getIngrediente(self):
+        return reverse('ingredPage', args=[self.pk])
+
 
 class Pizza(models.Model):
     namePi = models.CharField(max_length = 255)

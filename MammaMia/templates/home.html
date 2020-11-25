@@ -27,13 +27,22 @@
             
             
         </div>       
+        <div class="contenedorIngred"> 
+         <h3>Elige una pizza segun un ingrediente</h3>
+         <br> 
+         {% for ingrediente in ingredientes %}
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ingrediente.nameIn}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ingrediente.calorias}} kcal</h6>
+                  <p class="card-text">{{ingrediente.descrip}}</p>
+                  <a href="{{ingrediente.getIngrediente}}" class="card-link">Ver las pizzas que contienen este ingrediente</a>
+                </div>
+              </div>
+              <br>
+         {% endfor %}
+         </div>
 
-        <div class="contenedorIngred">
-            <div class="shadow p-3 mb-5 bg-white rounded"><h2>Ingrediente 1</h2></div>
-            <h2>Ingrediente 2</h2>
-            <h2>Ingrediente 3</h2>
-            <!-- Aqui ira otro tipo de contenido-->
-        </div>
         <div class="contenedorDescrip">
           <h2>Mamma Mia</h2>
           <h3>De donde venimos...</h3>

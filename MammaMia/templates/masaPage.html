@@ -1,13 +1,13 @@
 
 {% extends 'base.html' %}
 
-{% block title %} {{masa.nameMa}} {% endblock %}
+{% block title %} {{masas.nameMa}} {% endblock %}
 
 {% block content %}
     <div class="pizzasPorMasa">     
-        <h2>{{masa.nameMa}}</h2>
-        <img src="{{masa.image}}">
-        <p>{{masa.descrip}}</p>
+        <h2>{{masas.nameMa}}</h2>
+        <img src="{{masas.image}}">
+        <p>{{masas.descrip}}</p>
         <h3> Esta masa tiene las siguientes pizzas:</h3>
             {% for pizza in pizzas%}
             <div>
@@ -16,7 +16,7 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-interval="10000">
-                        <img src="{{masa.image}}}" class="d-block w-100">
+                        <img src="{{masas.image}}}" class="d-block w-100">
                       </div>
                       <div class="carousel-item" data-interval="2000">
                         <img src="..." class="d-block w-100" alt="...">

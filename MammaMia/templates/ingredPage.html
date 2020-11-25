@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ingrediente.nameIn}} {% endblock %}
+
+{% block content %}
+    <div class="pizzasPorIngred">     
+        <h2>{{ingrediente.nameIn}} </h2> 
+        <button type="button" class="btn btn-primary">
+            kcal <span class="badge badge-light">{{ingrediente.calorias}}</span>
+        </button>
+        <img src="{{masa.image}}">
+        <p>{{ingrediente.descrip}}</p>
+        <h3> Este ingrediente tiene las siguientes pizzas:</h3>
+            {% for pizza in pizzas%}
+            <div>
+                <p> {{pizza.namePi}} </p>
+            </div>
+            {% endfor %}
+    </div>
+    
+{% endblock %}
+

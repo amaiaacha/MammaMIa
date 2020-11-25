@@ -6,16 +6,25 @@ from .forms import crearPizzaForm
 # Create your views here.
 def homepage(request):
     masas = Masa.objects.all()
-    context = {'masas':masas}
+    ingredientes = Ingrediente.objects.all()
+    context = {'masas':masas, 'ingredientes':ingredientes}
     return render(request, 'home.html', context)
 
 def masaPage(request, pk):
     masas = get_object_or_404(Masa, pk = pk)
-    pizzas = Pizza.objects.filter(pk=pk) 
+    #hay que cambiar
+    pizzas = Pizza.objects.filter(pk=pk)
     ingredientes = Ingrediente.objects.filter(pk=pk)
     context = {'masas':masas, 'pizzas':pizzas, 'ingredientes':ingredientes}
 
     return render(request, 'masaPage.html', context)
+
+def ingredPage(request, pk):
+    ingrediente = get_object_or_404(Ingrediente, pk = pk)
+    pizzas = Pizza.objects.filter(pk=pk)
+    context = {'ingrediente':ingrediente, 'pizzas':pizzas}
+
+    return render(request, 'ingredPage.html', context)
 
 def crearPizza(request):
     masas = Masa.objects.all()
