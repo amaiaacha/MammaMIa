@@ -3,19 +3,24 @@
 {% block title %} {{ingrediente.nameIn}} {% endblock %}
 
 {% block content %}
-    <div class="pizzasPorIngred">     
+    <div class="pizzasPorIngred"> 
+        <div class="card text-center">    
         <h2>{{ingrediente.nameIn}} </h2> 
         <button type="button" class="btn btn-primary">
             kcal <span class="badge badge-light">{{ingrediente.calorias}}</span>
         </button>
-        <img src="{{masa.image}}">
         <p>{{ingrediente.descrip}}</p>
+        <img class="imagenIngred"  src="/media/{{ingrediente.image}}" style="padding-left: 80px;" width="700px" height="400px">
         <h3> Este ingrediente tiene las siguientes pizzas:</h3>
-            {% for pizza in pizzas%}
-            <div>
-                <p> {{pizza.namePi}} </p>
-            </div>
-            {% endfor %}
+           <div class="card-columns">
+          {% for pizza in pizzas %}
+          <div class="card">
+            <img class="card-img-top" src="/media/{{pizza.image}}" width="200px" height="150px">
+            <h5 class="card-title">{{pizza.namePi}}</h5>
+          </div>  
+          {% endfor %}  
+        </div>     
+        </div>
     </div>
     
 {% endblock %}

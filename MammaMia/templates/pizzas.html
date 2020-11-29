@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Pizzas {% endblock %}
+
+{% block content %}
+    <div class="pizzasDatos">
+        <div class="card-group">
+            {% for pizzas in pizza %}
+                <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h3 class="card-titlea">{{pizzas.namePi}}</h3>
+                            <img src="/media/{{pizzas.image}}" width="200px" height="150px">
+                            <h5>Masa de la pizza:</h5>
+                            <a href="{{pizzas.masa.getMasa}}"><p class="card-text">{{pizzas.masa}}</p></a>
+                            <h5>Ingredientes de la pizza:</h5>
+                                {% for ingredientes in pizzas.ingredientes.all %}
+                                    <li class="list-group-item">
+                                        <a href="{{ingredientes.getIngrediente}}">{{ingredientes.nameIn}} </a></li> 
+                                {% endfor %}                       
+                        </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

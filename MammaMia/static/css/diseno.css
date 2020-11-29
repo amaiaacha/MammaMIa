@@ -1,21 +1,22 @@
 /* PARTE HOME.HTML */
+
 .contenedorMasa{
     position: absolute;
-    height: 2500px;
+    height: 1800px;
     width: 1000px;
     left: 30px;
     top: 90px;
 }
 .contenedorIngred{
     position: absolute;
-    height: 6000px;
+    height: 1800px;
     width: 1000px;
     top: 400px;
     left: 20px;
 }
 .contenedorDescrip{
     position: absolute;
-    height: 600px;
+    height: 700px;
     width: 330px;
     top: 70px;
     left: 1100px;
@@ -36,20 +37,52 @@
     width: 300px;
 }
 
+.card-title{
+    margin-left: 15px;
+}
+.imgg{
+    margin-bottom: 10px;
+}
 /* PARTE CREARPIZZA.HTML*/
 
 .form-check{
     position: absolute;
-    left: 30px;
+    left: 20px;
 }
 
 .form-group{
     position: absolute;
-    left: 15px;
+    left: 10px;
     height: 100px;
 }
 
 .boton{
     position: absolute;
-    left: 30px;
+    left: 20px;
+}
+
+.formularioCrear{
+    position: absolute;
+    left: 20px;
+    width: 400px;
+}
+
+.gifs{
+    position: absolute;
+    top: 200px;
+    left: 300px;
+}
+
+/*PARTE INGREDPAGE.HTML*/
+
+.pizzasPorIngred{
+    position: absolute;
+    left: 25%;
+    width: 800px;
+}
+
+/*PARTE PIZZAS.HTML*/
+.pizzasDatos{
+    position: relative;
+
 }

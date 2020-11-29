@@ -19,6 +19,7 @@ class Ingrediente(models.Model):
     nameIn = models.CharField(max_length = 500)
     calorias = models.CharField(max_length = 4)
     descrip = models.CharField(max_length = 355)
+    image = models.ImageField(upload_to = 'ingredientes')
 
     def __str__(self):
         return self.nameIn
@@ -36,10 +37,12 @@ class Pizza(models.Model):
     def __str__(self):
         return self.namePi
 
+
 class nuevaPizza(models.Model):
     nombre = models.CharField(max_length = 255)
     masa = models.ForeignKey(Masa, on_delete=models.CASCADE)
     ingredientes = models.ManyToManyField(Ingrediente)
+    crear_pizza = models.BooleanField(default=False)
 
 class Direccion(models.Model):
     direccion = models.CharField(max_length=600)

@@ -35,7 +35,7 @@
          {% for ingrediente in ingredientes %}
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{ingrediente.nameIn}}</h5>
+                  <h5 class="card-titlea">{{ingrediente.nameIn}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{ingrediente.calorias}} kcal</h6>
                   <p class="card-text">{{ingrediente.descrip}}</p>
                   <a href="{{ingrediente.getIngrediente}}" class="card-link">Ver las pizzas que contienen este ingrediente</a>
@@ -45,6 +45,7 @@
          {% endfor %}
          </div>
 
+        
         <div class="contenedorDescrip">
           <h2>Mamma Mia</h2>
           <h3>De donde venimos...</h3>

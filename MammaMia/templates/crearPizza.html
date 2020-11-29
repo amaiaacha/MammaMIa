@@ -1,18 +1,18 @@
 {% extends 'base.html' %}    
 {% load crispy_forms_tags %}
 
-{% block title %} Hacer pedido {% endblock %}
+{% block title %} Crear pizza {% endblock %}
 
 {% block content %}
-
-<form method="POST">
+<div class="formularioCrear">
+  <form method="POST">
     <h2 style="font-style: italic; color: slategray;">Crea tu propia pizza</h2>
     {% csrf_token %}
   
-        <div class="form-group col-md-2 mb-0">
+        <div class="form-group col-md-8 mb-0">
           {{ form.nombre|as_crispy_field }}
         </div>
-        <div class="form-group col-md-2 mb-0">
+        <div class="form-group col-md-8 mb-0">
           {{ form.masa|as_crispy_field }}
         </div>
       
@@ -26,19 +26,9 @@
         {% endfor %}
         <br>
            <input type="submit", value="Crear pizza" class="boton"/>
-   
-      
-     
-</form>
-
-
-
-
-
-
-
-<!-- para seleccion de ingredientes
-
--->
-
+  </form>
+</div>
+<div class="gifs">
+  <img src="/media/image/lovepizza.gif" width="600" height="330">
+</div>
 {% endblock %}
