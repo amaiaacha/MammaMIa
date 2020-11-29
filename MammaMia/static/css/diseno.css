@@ -1,5 +1,10 @@
-/* PARTE HOME.HTML */
+/* PARTE BASE.HTML */
 
+
+/* PARTE HOME.HTML */
+.card-body{
+    background-color: #f5eae0;
+}
 .contenedorMasa{
     position: absolute;
     height: 1800px;
@@ -82,7 +87,3 @@
 }
 
 /*PARTE PIZZAS.HTML*/
-.pizzasDatos{
-    position: relative;
-
-}

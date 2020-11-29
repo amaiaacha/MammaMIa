@@ -19,16 +19,16 @@
         {% for ingredientes in form.ingredientes %} 
           <div class="form-check">
             <input class="form-check-input" type="checkbox"> 
-            <label class="form-check-label">
+            <datalist class="form-check-label">
               {{ingredientes}}
-            </label>
+            </datalist>
           </div>
         {% endfor %}
         <br>
-           <input type="submit", value="Crear pizza" class="boton"/>
+           <input type="submit" value="Crear pizza" class="boton"/>
   </form>
 </div>
 <div class="gifs">
-  <img src="/media/image/lovepizza.gif" width="600" height="330">
+  <img src="/media/image/lovepizza.gif" width="600" height="330" alt="lovepizza gif">
 </div>
 {% endblock %}

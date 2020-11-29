@@ -9,14 +9,16 @@
                 <div class="card text-center" style="width: 18rem;">
                         <div class="card-body">
                             <h3 class="card-titlea">{{pizzas.namePi}}</h3>
-                            <img src="/media/{{pizzas.image}}" width="200px" height="150px">
+                            <img src="/media/{{pizzas.image}}" width="200px" height="150px" alt="imagen de una pizza">
                             <h5>Masa de la pizza:</h5>
                             <a href="{{pizzas.masa.getMasa}}"><p class="card-text">{{pizzas.masa}}</p></a>
                             <h5>Ingredientes de la pizza:</h5>
+                                <ul>
                                 {% for ingredientes in pizzas.ingredientes.all %}
                                     <li class="list-group-item">
                                         <a href="{{ingredientes.getIngrediente}}">{{ingredientes.nameIn}} </a></li> 
-                                {% endfor %}                       
+                                {% endfor %}                   
+                                </ul>
                         </div>
                 </div>
             {% endfor %}

@@ -11,7 +11,5 @@ admin.site.register(Direccion)
 class PizzaAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'masa', 'ingredientes')
     search_fields = ('nombre', 'masa', 'ingredientes')
-    actions = ['crear_pizza']
 
-    def crear_pizza(self, request, queryset):
-        queryset.update(active=True)
+   

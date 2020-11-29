@@ -30,15 +30,16 @@ def crearPizza(request):
     masas = Masa.objects.all()
     ingredientes = Ingrediente.objects.all()
     newPizza = None
-    if(request.method == 'POST'):
-        form = crearPizzaForm(request.POST)
-        if form.is_valid():
-            newPizza = form.save(commit = False)
-            newPizza = form.save()
+    
+    if request.method == 'POST':
+        pizzaForm = crearPizzaForm(data=request.POST)
+        if pizzaForm.is_valid():
+            newPizza = pizzaForm.save(commit=False)
+            newPizza.save()
     else:
-       form = crearPizzaForm()
-       
-    context = {'ingredientes':ingredientes, 'masas':masas, 'form' : form, 'newPizza':newPizza}
+        pizzaForm = crearPizzaForm()
+
+    context = {'ingredientes':ingredientes, 'masas':masas, 'form' : pizzaForm, 'newPizza':newPizza}
     
     return render(request, 'crearPizza.html', context)
 

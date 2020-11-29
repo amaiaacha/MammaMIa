@@ -6,14 +6,14 @@
 {% block content %}
     <div class="pizzasPorMasa">     
         <h2>{{masas.nameMa}}</h2>
-        <img src="/media/{{masas.image}}" width="1450px" height="700px">
+        <img src="/media/{{masas.image}}" width="1450px" height="700px" alt="imagen de masa">
         <br>
         <p style="width: 1450px;">{{masas.descrip}}</p>
           <h3> Esta masa tiene las siguientes pizzas:</h3>
         <div class="card-deck">
           {% for pizza in pizzas %}
           <div class="card">
-            <img class="card-img-top" src="/media/{{pizza.image}}" width="200px" height="150px">
+            <img class="card-img-top" src="/media/{{pizza.image}}" width="200px" height="150px" alt="imagen de pizza">
             <h5 class="card-title">{{pizza.namePi}}</h5>
           </div>  
           {% endfor %} 

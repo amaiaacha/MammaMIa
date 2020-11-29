@@ -10,12 +10,12 @@
             kcal <span class="badge badge-light">{{ingrediente.calorias}}</span>
         </button>
         <p>{{ingrediente.descrip}}</p>
-        <img class="imagenIngred"  src="/media/{{ingrediente.image}}" style="padding-left: 80px;" width="700px" height="400px">
+        <img class="imagenIngred"  src="/media/{{ingrediente.image}}" style="padding-left: 80px;" width="700px" height="400px" alt="imagen de un ingrediente">
         <h3> Este ingrediente tiene las siguientes pizzas:</h3>
            <div class="card-columns">
           {% for pizza in pizzas %}
           <div class="card">
-            <img class="card-img-top" src="/media/{{pizza.image}}" width="200px" height="150px">
+            <img class="card-img-top" src="/media/{{pizza.image}}" width="200px" height="150px" alt="imagen de una pizza">
             <h5 class="card-title">{{pizza.namePi}}</h5>
           </div>  
           {% endfor %}  
