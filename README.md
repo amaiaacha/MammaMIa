@@ -8,3 +8,5 @@ Por otro lado, en la barra de arriba, tenemos acceso directo a otros apartados, 
 
 ### Por hacer
 Tenemos descargado js, sin embargo todavia no le hemos dado ningun uso dado que es para la siguiente entrega. Queríamos tener para esta entrega el formulario hecho pero nos ha dado un error por lo que no hemos podido terminarlo.
+Cambiar la imagen de la sección crearPizza a imagen estática. 
+Alinear la lista de ingredientes de la página pizzas.
