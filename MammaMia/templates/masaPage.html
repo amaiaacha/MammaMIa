@@ -1,14 +1,15 @@
 
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-{% block title %} {{masas.nameMa}} {% endblock %}
+{% block title %} {{masa.nameMa}} {% endblock %}
 
 {% block content %}
     <div class="pizzasPorMasa">     
-        <h2>{{masas.nameMa}}</h2>
-        <img src="/media/{{masas.image}}" width="1450px" height="700px" alt="imagen de masa">
+        <h2>{{masa.nameMa}}</h2>
+        <img src="/media/{{masa.image}}" width="1450px" height="700px" alt="imagen de masa">
         <br>
-        <p style="width: 1450px;">{{masas.descrip}}</p>
+        <p style="width: 1450px;">{{masa.descrip}}</p>
           <h3> Esta masa tiene las siguientes pizzas:</h3>
         <div class="card-deck">
           {% for pizza in pizzas %}
@@ -18,6 +19,32 @@
           </div>  
           {% endfor %} 
         </div>              
+    </div>
+    <div class="comentarios">
+      <h3>Sección de comentarios</h3>
+        {% for comment in comments %}
+
+          <div class="comments" style="padding: 10px;">
+            <p class="font-weight-bold">
+              {{ comment.nombre }}
+              <span class=" text-muted font-weight-normal">
+              {{ comment.created_on }}
+              </span>
+            </p>
+            {{ comment.contenido | linebreaks }}
+          </div>
+         {% empty %}
+         <p>No hay comentarios</p>
+        {% endfor %}
+        <div class="card-body">
+          <h3>Deja un comentario</h3>
+          <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+          </form>
+        </div>
+    
     </div>
     
 {% endblock %}

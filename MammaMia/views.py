@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Masa, Pizza, Ingrediente, nuevaPizza, Direccion
-from .forms import crearPizzaForm
+from .models import Masa, Pizza, Ingrediente, Direccion
+from .forms import crearPizzaForm, CommentForm
+from django.http import  HttpResponseRedirect
+from django.urls import reverse
+
 
 
 # Create your views here.
@@ -11,12 +14,22 @@ def homepage(request):
     return render(request, 'home.html', context)
 
 def masaPage(request, pk):
-    masas = get_object_or_404(Masa, pk = pk)
-    #hay que cambiar
-    pizzas = masas.pizza_set.all()
-    #ingredientes = Ingrediente.objects.filter(pk=pk)
-    context = {'masas':masas, 'pizzas':pizzas}
+    masa = get_object_or_404(Masa, pk = pk)
+    pizzas = masa.pizza_set.all()
+    comments = masa.comments.all()
+    new_comment = None
 
+    if request.method == 'POST':
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.masa = masa
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+
+    
+    context = {'masa':masa, 'pizzas':pizzas, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form}
     return render(request, 'masaPage.html', context)
 
 def ingredPage(request, pk):
@@ -34,8 +47,11 @@ def crearPizza(request):
     if request.method == 'POST':
         pizzaForm = crearPizzaForm(data=request.POST)
         if pizzaForm.is_valid():
+            print(11)
             newPizza = pizzaForm.save(commit=False)
             newPizza.save()
+            url = reverse('home')
+            return HttpResponseRedirect(url)
     else:
         pizzaForm = crearPizzaForm()
 

@@ -38,12 +38,6 @@ class Pizza(models.Model):
         return self.namePi
 
 
-class nuevaPizza(models.Model):
-    nombre = models.CharField(max_length = 255)
-    masa = models.ForeignKey(Masa, on_delete=models.CASCADE)
-    ingredientes = models.ManyToManyField(Ingrediente)
-    crear_pizza = models.BooleanField(default=False)
-
 class Direccion(models.Model):
     direccion = models.CharField(max_length=600)
     numeroTelf = models.IntegerField(blank=True)
@@ -52,7 +46,18 @@ class Direccion(models.Model):
     def __str__(self):
         return self.direccion
 
+class Comment(models.Model):
+    masa = models.ForeignKey(Masa,on_delete=models.CASCADE,related_name='comments')
+    nombre = models.CharField(max_length=80)
+    contenido = models.CharField(max_length = 2500)
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return ' {} ha comentado :  {}'.format(self.nombre, self.contenido)
 
 
 

@@ -4,29 +4,28 @@
 {% block title %} Crear pizza {% endblock %}
 
 {% block content %}
-<div class="formularioCrear">
+<div class="formularioCrear" id="formularioCrear">
   <form method="POST">
+    <br>
     <h2 style="font-style: italic; color: slategray;">Crea tu propia pizza</h2>
+    <br>
     {% csrf_token %}
   
-        <div class="form-group col-md-8 mb-0">
-          {{ form.nombre|as_crispy_field }}
+        <div id="formNombre" class="form-group col-md-8 mb-0">
+          {{ form.namePi|as_crispy_field }}
         </div>
         <div class="form-group col-md-8 mb-0">
           {{ form.masa|as_crispy_field }}
         </div>
-      
-        {% for ingredientes in form.ingredientes %} 
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox"> 
-            <datalist class="form-check-label">
-              {{ingredientes}}
-            </datalist>
-          </div>
-        {% endfor %}
+        <div class="form-group">
+          {{ form.ingredientes|as_crispy_field }}
+        </div>
         <br>
-           <input type="submit" value="Crear pizza" class="boton"/>
+           <input type="submit" value="Crear pizza" class="boton" onclick="imprimirPizza(form)"/>
   </form>
+</div>
+<div class="explicacion">
+<h3 onclick="changeText(this)">Diseña tu propia pizza</h3>
 </div>
 <div class="gifs">
   <img src="/media/image/lovepizza.gif" width="600" height="330" alt="lovepizza gif">
