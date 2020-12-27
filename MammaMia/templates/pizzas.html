@@ -3,50 +3,49 @@
 {% block title %} Pizzas {% endblock %}
 
 {% block content %}
-    <div class="pizzasDatos">
+    <div class="pizzasDatos"> 
+        
+        {% load i18n %}     
+        <h2> {% trans '¡Pincha encima de las pizzas para verlas mejor!' %}</h2>
         <div class="row">
         {% for pizzas in pizza %}
-            <div class="column">
+        <div class="column">
             {% if pizzas.image %}
               <img src="{{pizzas.image.url}}"  width="200px" height="150px" alt="imagen pizza" onclick="myFunction(this);">
             {% else %}
-            <img src="/media/image/pizzaDefault.png" width="200px" height="150pxa" alt="pizza por defecto">
+            <img src="/media/image/pizzaDefault.png" width="200px" height="150px" alt="pizza por defecto">
             {% endif %} 
+            <div class="card text-center">
+                <h5> {% trans 'Masa de la pizza:' %}</h5>
+                <a href="{{pizzas.masa.getMasa}}"><p class="card-text">{{pizzas.masa}}</p></a>
+                <h5> {% trans 'Ingredientes de la pizza:' %}</h5>
+                    <ul class="listaIngredientes">
+                        {% for ingredientes in pizzas.ingredientes.all %}
+                            <li class="list-group-item">
+                                <a href="{{ingredientes.getIngrediente}}">  {{ingredientes.nameIn}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul> 
             </div>
+           
+        </div>
         {% endfor %}  
         </div>
-          <div class="container">
-            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <div class="container">
+            <span class="closebtn" id="botonPizza">&times;</span>
             <img id="expandedImg" style="width:100%">
             <div id="imgtext">
                 <!--texto -->
             </div>
-        </div>
-        <!--
-        <div class="card-group">
-            {% for pizzas in pizza %}
-                <div class="card text-center" style="width: 18rem;">
-                        <div class="card-body">
-                            <h3 class="card-title">{{pizzas.namePi}}</h3>
-                            {% if pizzas.image %}
-                            <img src="/media/{{pizzas.image}}" width="200px" height="150px" alt="imagen de una pizza">
-                            {% else %}
-                            <img src="/media/image/pizzaDefault.png" width="200px" height="150px" alt="imagen de una pizza por defecto">
-                            {% endif%}
-                            <h5>Masa de la pizza:</h5>
-                            <a href="{{pizzas.masa.getMasa}}"><p class="card-text">{{pizzas.masa}}</p></a>
-                            <h5>Ingredientes de la pizza:</h5>
-                            <ul class="listaIngredientes">
-                                {% for ingredientes in pizzas.ingredientes.all %}
-                                    <li class="list-group-item">
-                                        <a href="{{ingredientes.getIngrediente}}">{{ingredientes.nameIn}} </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>  
-                        </div>
-                </div>
-            {% endfor %}
-        </div>-->
+        </div><script>
+            
+        $("#botonPizza").click(function(){
+            $("#expandedImg").hide(1500);
+            $("#imgtext").hide(1500);
+            $("#botonPizza").hide(1500);
+        });
+        </script> 
+          
     </div>
 {% endblock %}
 

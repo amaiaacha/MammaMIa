@@ -9,7 +9,8 @@
 
 
     <div class="contenedorMasa">
-         <h3>Elige una pizza segun su masa</h3>
+        {% load i18n %}
+         <h3> {% trans 'Elige una pizza segun su masa' %}</h3>
          <br>
         <div class="card-deck">
             {% for masa in masas %}
@@ -29,15 +30,15 @@
             
         </div>       
         <div class="contenedorIngred"> 
-         <h3>Elige una pizza segun un ingrediente</h3>
+         <h3>{% trans 'Elige una pizza segun un ingrediente' %}</h3>
          <br> 
          {% for ingrediente in ingredientes %}
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-titlea">{{ingrediente.nameIn}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{ingrediente.calorias}} kcal</h6>
+                  <h5 class="card-titlea">{{ingrediente.nameIn}} </h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> {{ingrediente.calorias}} kcal </h6>
                   <p class="card-text">{{ingrediente.descrip}}</p>
-                  <a href="{{ingrediente.getIngrediente}}" class="card-link">Ver las pizzas que contienen este ingrediente</a>
+                  <a href="{{ingrediente.getIngrediente}}" class="card-link">{% trans 'Ver las pizzas que contienen este ingrediente' %}</a>
                 </div>
               </div>
               <br>
@@ -47,8 +48,8 @@
         
         <div class="contenedorDescrip">
           <h2>Mamma Mia</h2>
-          <h3>De donde venimos...</h3>
-         <p>Este negocio surgio en 1980 cuando Jorge Lekken abrio el primer restaurante oficial de Mamma Mia.
+          <h3> {% trans 'De donde venimos...' %}</h3>
+         <p> {% blocktrans trimmed %} Este negocio surgio en 1980 cuando Jorge Lekken abrio el primer restaurante oficial de Mamma Mia.
             Pese a las complicaciones que tuvo a finales de los 90 consiguó ampliar su negocio y llegar hasta America,
             donde sus pizzas se volvieron mundialmente famosas. Todo comenzó cuando Jorge terminó sus estudios de Ingeniería
             Industrial y comenzó a buscar trabajo. En 1970 la situación económica en Australia dejó a muchos jóvenes que acababan
@@ -57,13 +58,52 @@
             Mamma calló. Meses después, Jorge planteó la posibilidad de crear una pizzeria con el dinero que había ido ahorrando mientras
             trabajaba y así fue como nació en 1980 Mamma Mia haciendo honor a su antiguo trabajo.
             donde sus pizzas se volvieron mundialmente famosas.
+            {% endblocktrans %}
          </p>
             <!-- Aqui ira lo que ira en el bloque de la derecha-->
         </div>
-        <div class="facebook" onclick="abrirFacebook()">
-            <p>Compartir en facebook</p>
-            <img id="facebook" src="/media/image/fb.png" width="100px" height="100px">
-        </div>
+        
+        <div class="descs">  
+            <h3>¿Qué tenemos de especial?</h3>    
+            <button class="accordion">Masas</button>
+    <div class="panel">
+       <p>Tenemos las mejores masas de la ciudad. Tenemos varios tipos y sabores distintos, puedes elegir a tu gusto.
+           Nuestras masas son elaboradas como una masa elástica y de fácil moldeado. No habrá necesidad de apretar los rodillos de la laminadora, 
+           ni hacer una presión excesiva con el rulo en el bando de trabajo, lo cual hace que la masa no se adhiera.
+       </p>
+    </div>
 
+    <button class="accordion">Ingredientes</button>
+    <div class="panel">
+        <p>No es secreto que uno de los factores más importantes en la cocina, son unos buenos ingredientes. Cuando hablo de buenos, me refiero a que sean de calidad.
+            Frutas y vegetales frescos, carnes de primera, harinas y cereales que no estén vencidos y que no hayan sido guardados en humedad… 
+            Todo eso importa y será fundamental para que nuestro plato quede espectacular.
+            </p>
+    </div>
+
+    <button class="accordion">Rapidez</button>
+        <div class="panel">
+    <p>Y lo importante que es que llegue una pizza caliente a casa! Nosotros nos encargamos de todo! Dejalo en nuestras manos.</p>
+    </div>
+    </div><script>
+         var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = "200px";
+    }
+  });
+}
+    </script>
+    <div class="facebook" onclick="abrirFacebook()">
+        <h6>Compartir en facebook</h6>
+        <img id="facebook" src="/media/image/fb.png" width="100px" height="100px">
+    </div>
+  
 
 {% endblock%}

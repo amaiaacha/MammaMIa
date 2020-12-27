@@ -5,23 +5,24 @@
 {% block title %} {{masa.nameMa}} {% endblock %}
 
 {% block content %}
+  {% load i18n %}
     <div class="pizzasPorMasa">     
-        <h2>{{masa.nameMa}}</h2>
+        <h2> {{masa.nameMa}}</h2>
         <img src="/media/{{masa.image}}" width="1450px" height="700px" alt="imagen de masa">
         <br>
-        <p style="width: 1450px;">{{masa.descrip}}</p>
-          <h3> Esta masa tiene las siguientes pizzas:</h3>
+        <p style="width: 1450px;">  {{masa.descrip}}</p>
+          <h3> {% trans 'Esta masa tiene las siguientes pizzas:' %}</h3>
         <div class="card-deck">
           {% for pizza in pizzas %}
           <div class="card">
             <img class="card-img-top" src="/media/{{pizza.image}}" width="200px" height="150px" alt="imagen de pizza">
-            <h5 class="card-title">{{pizza.namePi}}</h5>
+            <h5 class="card-title"> {{pizza.namePi}}</h5>
           </div>  
           {% endfor %} 
         </div>              
     </div>
     <div class="comentarios">
-      <h3>Sección de comentarios</h3>
+      <h3> {% trans 'Sección de comentarios' %}</h3>
         {% for comment in comments %}
 
           <div class="comments" style="padding: 10px;">
@@ -34,11 +35,12 @@
             {{ comment.contenido | linebreaks }}
           </div>
          {% empty %}
-         <p>No hay comentarios</p>
+         <p> {% trans 'No hay comentarios' %}</p>
         {% endfor %}
         <div class="card-body">
-          <h3>Deja un comentario</h3>
+          <h3> {% trans 'Deja un comentario' %}</h3>
           <form method="post" style="margin-top: 1.3em;">
+            
             {{ comment_form.as_p }}
             {% csrf_token %}
             <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
