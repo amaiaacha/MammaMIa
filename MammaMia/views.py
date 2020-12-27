@@ -75,4 +75,7 @@ def who(request):
     return render(request, 'who.html', context)
 
 def agenda(request):
+    return render(request, 'agenda.html', {})
+
+def index(request):
     return render(request, 'index.html', {})

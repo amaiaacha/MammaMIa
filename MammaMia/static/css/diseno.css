@@ -1,6 +1,5 @@
-/* PARTE BASE.HTML */
-/* PARTE HOME.HTML */
 
+/* PARTE HOME.HTML */
 .card-body{
     background-color: #ff9022a2;
     border-style: ridge;
@@ -26,7 +25,6 @@
     top: 70px;
     left: 1100px;
 }
-
 .facebook{
     position: absolute;
     top: 730px;
@@ -64,7 +62,7 @@
     content: "\2796"; 
     }
     
-.active, .accordion:hover {
+  .active, .accordion:hover {
     background-color: #ccc;
   }
   .panel { 
@@ -242,4 +240,10 @@
     position: absolute;
     top: 3600px;
     left: 60px;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
   }

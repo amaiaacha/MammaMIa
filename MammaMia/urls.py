@@ -8,5 +8,6 @@ urlpatterns = [
     path('crearPizza/', views.crearPizza, name = 'crearPizza'),
     path('who/', views.who, name = 'who'),
     path('pizzas/', views.pizzas, name = 'pizzas'),
-    path('index/', views.agenda, name= 'index')
+    path('index/', views.index, name= 'index'),
+    path('agenda/', views.agenda, name= 'agenda')
 ]
