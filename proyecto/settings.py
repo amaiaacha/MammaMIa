@@ -46,13 +46,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'proyecto.urls'
@@ -90,10 +91,6 @@ DATABASES = {
 LANGUAGES = [
     ('es', _('Español')),
     ('en-us', _('English'))
-]
-
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale')
 ]
 
 # Password validation

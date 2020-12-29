@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+    {% load static %}
+    <script src="{% static 'css/diseno.css'%}"></script>
     <title>Agenda</title>
 </head>
     <body class="fondo">
@@ -19,15 +20,14 @@
                 <li class="nav-item">
                   <a class="nav-link" href="../pizzas">Pizzas</a>
                 </li>
-                {% load i18n %}
                 <li class="nav-item">
-                  <a class="nav-link" href='../crearPizza'> {% trans 'Personalizar pizza' %} <span class="sr-only"></span></a>
+                  <a class="nav-link" href='../crearPizza'> Personalizar pizza<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../who"> {% trans 'Donde encontrarnos' %}</a>
+                  <a class="nav-link" href="../who"> Donde encontrarnos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../agenda"> {% trans 'Agenda' %}</a>
+                  <a class="nav-link" href="../agenda"> Agenda</a>
                 </li>
               </ul>
             </div>
@@ -61,8 +61,7 @@
                                 <td v-text = "contacto.nombre"></td>
                                 <td v-text = "contacto.email"></td>
                                 <td v-text = "contacto.num"></td>
-                                <transition name ="fade">
-                                <td><input class="btn btn-xs btn-danger" value="borrar" v-on:click="eliminarContacto(index)"></td></transition>
+                                <td><input class="btn btn-xs btn-danger" value="borrar" v-on:click="eliminarContacto(index)"></td>
                             </tr>
                         </table>
                     </div>
@@ -76,11 +75,41 @@
                 </div>
             </div>
         </div>
+<div>
+  <h3>Introduce un valor</h3>
+  <input type="text" name="caja" id="valor1" value="0">
+  <h3>Introduce un otro</h3>
+  <input type="text" name="caja2" id="valor2" value="0">
+  <h3>Realizar suma</h3>
+  <input type="button"  onclick="sumar($('#valor1').val(), $('#valor2').val()); return false;" value="Calcula">
+   <br>
+   <h3>Resultado:</h3>  
+   <span id="resultado"> 0 </span>
+</div>
+
+<script>
+  function sumar(cont1, cont2){
+    var parametros = {
+      "cont1" : cont1,
+      "cont2" : cont2
+    };
+    $ajax({
+      data: parametros,
+      type: 'post',
+      beforeSend : function(){
+        $("#resultado").html("Espere por favor...")
+      },
+      success:function(){
+        $("#resultado").html(response);
+      }, 
+      
+    });
+  }
+    </script>
 </body>
 {% load static %}
 
 <script src="{% static 'js/vue.js' %}"></script>
 <script src="{% static 'js/contactos.js' %}"></script>
-<script src="{% static 'css/diseno.css'%}"></script>
-
+<script src="{% static 'js/funcionalidadesBasicas.js' %}"></script>
 </html>

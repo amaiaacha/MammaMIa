@@ -9,8 +9,7 @@
 
 
     <div class="contenedorMasa">
-        {% load i18n %}
-         <h3> {% trans 'Elige una pizza segun su masa' %}</h3>
+         <h3> Elige una pizza segun su masa</h3>
          <br>
         <div class="card-deck">
             {% for masa in masas %}
@@ -30,7 +29,7 @@
             
         </div>       
         <div class="contenedorIngred"> 
-         <h3>{% trans 'Elige una pizza segun un ingrediente' %}</h3>
+         <h3>Elige una pizza segun un ingrediente</h3>
          <br> 
          {% for ingrediente in ingredientes %}
             <div class="card">
@@ -38,7 +37,7 @@
                   <h5 class="card-titlea">{{ingrediente.nameIn}} </h5>
                   <h6 class="card-subtitle mb-2 text-muted"> {{ingrediente.calorias}} kcal </h6>
                   <p class="card-text">{{ingrediente.descrip}}</p>
-                  <a href="{{ingrediente.getIngrediente}}" class="card-link">{% trans 'Ver las pizzas que contienen este ingrediente' %}</a>
+                  <a href="{{ingrediente.getIngrediente}}" class="card-link">Ver las pizzas que contienen este ingrediente</a>
                 </div>
               </div>
               <br>
@@ -48,8 +47,8 @@
         
         <div class="contenedorDescrip">
           <h2>Mamma Mia</h2>
-          <h3> {% trans 'De donde venimos...' %}</h3>
-         <p> {% blocktrans trimmed %} Este negocio surgio en 1980 cuando Jorge Lekken abrio el primer restaurante oficial de Mamma Mia.
+          <h3> De donde venimos...</h3>
+         <p> Este negocio surgio en 1980 cuando Jorge Lekken abrio el primer restaurante oficial de Mamma Mia.
             Pese a las complicaciones que tuvo a finales de los 90 consiguó ampliar su negocio y llegar hasta America,
             donde sus pizzas se volvieron mundialmente famosas. Todo comenzó cuando Jorge terminó sus estudios de Ingeniería
             Industrial y comenzó a buscar trabajo. En 1970 la situación económica en Australia dejó a muchos jóvenes que acababan
@@ -58,7 +57,6 @@
             Mamma calló. Meses después, Jorge planteó la posibilidad de crear una pizzeria con el dinero que había ido ahorrando mientras
             trabajaba y así fue como nació en 1980 Mamma Mia haciendo honor a su antiguo trabajo.
             donde sus pizzas se volvieron mundialmente famosas.
-            {% endblocktrans %}
          </p>
             <!-- Aqui ira lo que ira en el bloque de la derecha-->
         </div>
@@ -102,7 +100,7 @@
     </script>
     <div class="facebook" onclick="abrirFacebook()">
         <h6>Compartir en facebook</h6>
-        <img id="facebook" src="/media/image/fb.png" width="100px" height="100px">
+        <img id="facebook" src="/media/image/fb.png" alt="imagen facebook" width="100px" height="100px">
     </div>
   
 

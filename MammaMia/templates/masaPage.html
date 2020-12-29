@@ -11,7 +11,7 @@
         <img src="/media/{{masa.image}}" width="1450px" height="700px" alt="imagen de masa">
         <br>
         <p style="width: 1450px;">  {{masa.descrip}}</p>
-          <h3> {% trans 'Esta masa tiene las siguientes pizzas:' %}</h3>
+          <h3>Esta masa tiene las siguientes pizzas:</h3>
         <div class="card-deck">
           {% for pizza in pizzas %}
           <div class="card">
@@ -22,7 +22,7 @@
         </div>              
     </div>
     <div class="comentarios">
-      <h3> {% trans 'Sección de comentarios' %}</h3>
+      <h3>Sección de comentarios</h3>
         {% for comment in comments %}
 
           <div class="comments" style="padding: 10px;">
@@ -35,10 +35,10 @@
             {{ comment.contenido | linebreaks }}
           </div>
          {% empty %}
-         <p> {% trans 'No hay comentarios' %}</p>
+         <p> No hay comentarios</p>
         {% endfor %}
         <div class="card-body">
-          <h3> {% trans 'Deja un comentario' %}</h3>
+          <h3> Deja un comentario</h3>
           <form method="post" style="margin-top: 1.3em;">
             
             {{ comment_form.as_p }}

@@ -5,8 +5,7 @@
 {% block content %}
     <div class="pizzasDatos"> 
         
-        {% load i18n %}     
-        <h2> {% trans '¡Pincha encima de las pizzas para verlas mejor!' %}</h2>
+        <h2> ¡Pincha encima de las pizzas para verlas mejor!</h2>
         <div class="row">
         {% for pizzas in pizza %}
         <div class="column">
@@ -16,9 +15,9 @@
             <img src="/media/image/pizzaDefault.png" width="200px" height="150px" alt="pizza por defecto">
             {% endif %} 
             <div class="card text-center">
-                <h5> {% trans 'Masa de la pizza:' %}</h5>
+                <h5> Masa de la pizza:</h5>
                 <a href="{{pizzas.masa.getMasa}}"><p class="card-text">{{pizzas.masa}}</p></a>
-                <h5> {% trans 'Ingredientes de la pizza:' %}</h5>
+                <h5> Ingredientes de la pizza:</h5>
                     <ul class="listaIngredientes">
                         {% for ingredientes in pizzas.ingredientes.all %}
                             <li class="list-group-item">
@@ -33,7 +32,7 @@
         </div>
         <div class="container">
             <span class="closebtn" id="botonPizza">&times;</span>
-            <img id="expandedImg" style="width:100%">
+            <img id="expandedImg" style="width:100%" alt="imagen expandida">
             <div id="imgtext">
                 <!--texto -->
             </div>
